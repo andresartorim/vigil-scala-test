@@ -25,6 +25,7 @@ Used in this project
 > sbt publishLocal
 
 after that, you need to get the output path from your machine to get the jar path
+replace `{{MACHINE-FOLDER}}` with the jar path on your machine
 
 ```sh
 spark-submit --class org.vigil.devtest.VigilScalaApp --master local[*] /{{MACHINE-FOLDER}}/org.vigil/vgl-scala-test_2.12/0.1.0-SNAPSHOT/jars/vgl-scala-test_2.12.jar S3-INPUT-PATH S3-OUTPUT-PATH AWS-CREDENTIALS
