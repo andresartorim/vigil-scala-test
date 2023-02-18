@@ -25,6 +25,7 @@ Used in this project
 > sbt publishLocal
 
 after that, you need to get the output path from your machine to get the jar path
+
 replace `{{MACHINE-FOLDER}}` with the jar path on your machine
 
 ```sh
