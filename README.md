@@ -46,13 +46,13 @@ The output should be in `src/main/resources/output`
 after that, you need to get the output path from your machine to get the jar path
 
 ```sh
-spark-submit --class org.vigil.devtest.VigilScalaBonusApp --master local[*] /{{MACHINE-FOLDER}}/org.vigil/vgl-scala-test_2.12/0.1.0-SNAPSHOT/jars/vgl-scala-test_2.12.jar S3-INPUT-PATH S3-OUTPUT-PATH AWS-CREDENTIALS
+spark-submit --class org.vigil.bonus.VigilScalaBonusApp --master local[*] /{{MACHINE-FOLDER}}/org.vigil/vgl-scala-test_2.12/0.1.0-SNAPSHOT/jars/vgl-scala-test_2.12.jar S3-INPUT-PATH S3-OUTPUT-PATH AWS-CREDENTIALS
 ```
 
 using an input an output locally should be like this:
 
 ```sh
-spark-submit --class org.vigil.devtest.VigilScalaBonusApp --master local[*] /{{MACHINE-FOLDER}}/org.vigil/vgl-scala-test_2.12/0.1.0-SNAPSHOT/jars/vgl-scala-test_2.12.jar src/main/resources src/main/resources/output/bonus default
+spark-submit --class org.vigil.bonus.VigilScalaBonusApp --master local[*] /{{MACHINE-FOLDER}}/org.vigil/vgl-scala-test_2.12/0.1.0-SNAPSHOT/jars/vgl-scala-test_2.12.jar src/main/resources src/main/resources/output/bonus default
 ```
 
 The output should be in `src/main/resources/output/bonus`
