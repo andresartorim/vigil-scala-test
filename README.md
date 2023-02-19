@@ -15,14 +15,14 @@ Used in this project
 `sbt test`
 
 ### Build
-`sbt publishLocal`
+`sbt update`
 
 ---
 
 ## Run VirgialScalaApp
 
 #### Build jar locally
-> sbt publishLocal
+`sbt publishLocal`
 
 after that, you need to get the output path from your machine to get the jar path
 
