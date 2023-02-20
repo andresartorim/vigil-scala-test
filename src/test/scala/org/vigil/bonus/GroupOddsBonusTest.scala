@@ -26,6 +26,7 @@ class GroupOddsBonusTest extends org.scalatest.funsuite.AnyFunSuite  with Before
     val unionDF = csvDF.union(tsvDF)
 
     val groupedDF = GroupOddsBonus.execute(unionDF)
+    groupedDF.show()
     assert(groupedDF.collect().sameElements(expectedDF.collect()))
 
   }

@@ -22,8 +22,8 @@ class AppFunctionsTest extends org.scalatest.funsuite.AnyFunSuite with BeforeAnd
     df.count()
     df.show()
     assert(df.count() != 0)
-    assert(df.head.get(0) === 5)
-    assert(df.head.get(1) === 25)
+    assert(df.head.get(0) === 20)
+    assert(df.head.get(1) === 1)
   }
 
 

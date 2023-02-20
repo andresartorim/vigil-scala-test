@@ -7,16 +7,21 @@ import org.apache.spark.sql.types.IntegerType
 
 
 object GroupOddsBonus {
-  // groupBy keys and filter odds
+  // Using lit to get column the first and the second column and rename then
+  // grouping by key and value
+  // filter the odds different than zero division
+  // agg the value from the odd
+  // withColumn odd_value as an Integer
   def execute(df: DataFrame): DataFrame = {
-    df
-      .withColumnRenamed(df.columns.head, "key")
-      .withColumnRenamed(df.columns.last, "value")
+    df.withColumn("key", when(col("key") === "", lit("0")).otherwise(col("key")))
+      .withColumn("value", when(col("value") === "", lit("1")).otherwise(col("value")))
       .groupBy("key", "value")
-      .agg(functions.count("value"))
-      .filter("count(value) % 2 != 0")
-      .withColumn("value", col("value").cast(IntegerType))
-      .select("key", "value")
+      .count()
+      .filter("count % 2 != 0")
+      .groupBy("key")
+      .agg(first("value").as("odd_value"))
+      .withColumn("key", col("key").cast(IntegerType))
+      .withColumn("odd_value", col("odd_value").cast(IntegerType))
   }
 
 }
